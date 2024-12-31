@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000428, #004e92);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .heading {
+            font-size: 3.5em;
+            margin: 20px 0;
+            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6;
+            }
+        }
+
+        .countdown {
+            font-size: 2.5em;
+            margin: 40px 0;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+        }
+
+        .countdown span {
+            display: inline-block;
+            min-width: 80px;
+            padding: 15px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            margin: 0 10px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .memory-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            padding: 20px;
+        }
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .memory-card h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .memory-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .heart {
+            color: #ff4d4d;
+            font-size: 30px;
+            animation: heartBeat 1.5s infinite;
+            display: inline-block;
+            margin: 0 10px;
+            filter: drop-shadow(0 0 5px rgba(255,77,77,0.5));
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(1px);
+        }
+
+        .snow {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        h2 {
+            font-size: 2em;
+            margin: 40px 0;
+            background: linear-gradient(45deg, #ff4d4d, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading"><span class="heart">♥</span> Welcome 2025... <span class="heart">♥</span></h1>
+        
+        <div class="countdown" id="countdown"></div>
+        
+        <h2>Our Special Moments</h2>
+        <div class="memory-wall">
+            <div class="memory-card">
+                <h3>Champp</h3>
+                <p>Where our story began...</p>
+            </div>
+            <div class="memory-card">
+                <h3>First Kiki</h3>
+                <p>A magical moment...</p>
+            </div>
+            <div class="memory-card">
+                <h3>First Trip Together</h3>
+                <p>kaka's wacth gift ride in rain long trip</p>
+            </div>
+            <div class="memory-card">
+                <h3>Movie Nights</h3>
+                <p>Your midnight kiki's </p>
+            </div>
+            <div class="memory-card">
+                <h3>First  Pizza</h3>
+                <p>Pizza hutzz</p>
+            </div>  
+            <div class="memory-card">
+                <h3>First  Festival</h3>
+                <p>Mahalkshmi Makar</p>
+            </div>  
+            <div class="memory-card">
+                <h3>First  starting</h3>
+                <p>Dada's Gondhal</p>
+            </div>
+            <div class="memory-card">
+                <h3>First  long trip</h3>
+                <p>Latur to Nashik</p>
+            </div>
+            <div class="memory-card">
+                <h3>First  shoping</h3>
+                <p>demart</p>
+            </div>
+            <div class="memory-card">
+                <h3>First  birthday gift</h3>
+                <p>New cool Dress</p>
+            </div>
+            <div class="memory-card">
+                <h3>First  same shopping</h3>
+                <p>Mobiles Backcover</p>
+            </div>
+            <div class="memory-card">
+                <h3>First  Tample</h3>
+                <p>Mhadev ( tlyatla )</p>
+            </div>
+            <div class="memory-card">
+                <h3>First  magical gift</h3>
+                <p>KiderJoy ring</p>
+            </div>
+            <div class="memory-card">
+                <h3>First Full panipuri</h3>
+                <p>Devgiri panipuri</p>
+            </div>
+            <div class="memory-card">
+                <h3>First Nonveg</h3>
+                <p>chiken biryani with all</p>
+            </div>
+            <div class="memory-card" >
+                <h3>First  Snap</h3>
+                <p>Shivaji maharaj CHowk on vehicle</p>
+            </div>
+            <div class="memory-card" >
+                <h3>first whatsapp photo</h3>
+                <p>Black white color tshirt</p>
+            </div>
+            <div class="memory-card" >
+                <h3>First  pavbhaji</h3>
+                <p>MH12</p>
+            </div>
+            <div class="memory-card" >
+                <h3>First  reel</h3>
+                <p>main ghar me kuch kam nhi krti</p>
+            </div>
+            <div class="memory-card" >
+                <h3>First  Menhdi</h3>
+                <p>shradhassss design</p>
+            </div>
+            <div class="memory-card" >
+                <h3>Best friedn </h3>
+                <p>Smita</p>
+            </div>
+            <div class="memory-card" >
+                <h3>Best friend</h3>
+                <p>abhi</p>
+            </div>
+            <div class="memory-card" >
+                <h3>Crime Partner</h3>
+                <p>Bhavna</p>
+            </div>
+            <div class="memory-card" >
+                <h3>Best girl crime partner</h3>
+                <p>Anku..</p>
+            </div>
+            <div class="memory-card" >
+                <h3>First love</h3>
+                <p>CA</p>
+            </div>
+            <div class="memory-card" >
+                <h3>First  Game name</h3>
+                <p>Jonny</p>
+            </div>
+            
+        </div>
+
+        <h2>Here's to Many More Years Together! 🎉</h2>
+    </div>
+
+    <script>
+        // Enhanced countdown with formatted display
+        function updateCountdown() {
+            const now = new Date();
+            const newYear = new Date(now.getFullYear() + 1, 0, 1);
+            const diff = newYear - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = 
+                `<span>${days}d</span> <span>${hours}h</span> <span>${minutes}m</span> <span>${seconds}s</span>`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Enhanced fireworks effect
+        function createFirework(x, y) {
+            for (let i = 0; i < 30; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.style.left = x + 'px';
+                firework.style.top = y + 'px';
+                firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+                const angle = (Math.PI * 2 * i) / 30;
+                const velocity = 15;
+                const vx = Math.cos(angle) * velocity;
+                const vy = Math.sin(angle) * velocity;
+
+                document.body.appendChild(firework);
+
+                let posX = x;
+                let posY = y;
+                let life = 100;
+
+                const animate = () => {
+                    posX += vx;
+                    posY += vy + 0.2; // Add gravity effect
+                    life -= 1.5;
+
+                    firework.style.left = posX + 'px';
+                    firework.style.top = posY + 'px';
+                    firework.style.opacity = life / 100;
+                    firework.style.transform = `scale(${life/50})`;
+
+                    if (life > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        firework.remove();
+                    }
+                };
+
+                animate();
+            }
+        }
+
+        // Create snow effect
+        function createSnow() {
+            const snow = document.createElement('div');
+            snow.className = 'snow';
+            snow.style.left = Math.random() * window.innerWidth + 'px';
+            snow.style.opacity = Math.random();
+            snow.style.animation = `snowfall ${Math.random() * 3 + 2}s linear infinite`;
+            document.body.appendChild(snow);
+
+            snow.addEventListener('animationend', () => snow.remove());
+        }
+
+        // Create snow periodically
+        setInterval(createSnow, 100);
+
+        // Create random fireworks
+        setInterval(() => {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * (window.innerHeight / 2);
+            createFirework(x, y);
+        }, 2000);
+
+        // Click event for fireworks
+        document.addEventListener('click', (e) => {
+            createFirework(e.clientX, e.clientY);
+        });
+    </script>
+</body>
+</html>
